@@ -1,16 +1,7 @@
-import {
-    BaseQueryFn,
-    FetchArgs,
-    FetchBaseQueryError,
-} from '@reduxjs/toolkit/query';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 const baseQuery = fetchBaseQuery({ baseUrl: '/' });
-const baseQueryWithReauth: BaseQueryFn<
-    string | FetchArgs,
-    unknown,
-    FetchBaseQueryError
-> = async (args, api, extraOptions) => {
+const baseQueryWithReauth = async (args, api, extraOptions) => {
     let result = await baseQuery(args, api, extraOptions);
     if (result.error && result.error.status === 401) {
         // try to get a new token
