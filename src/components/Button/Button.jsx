@@ -1,5 +1,6 @@
-import '../Button/Button.css';
-function Button () {
+import './Button.css';
+
+function Button() {
     return (
         <div className="but_add">
             <button className="but_main">
@@ -7,5 +8,5 @@ function Button () {
             </button>
         </div>
     );
-};
+}
 export default Button;
