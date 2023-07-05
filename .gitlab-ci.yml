@@ -1,0 +1,54 @@
+## PIPELINE DEFINITION
+stages:
+    - lint
+    - test
+    - build
+#########################################################################################################
+### CODE STYLE SECTION
+
+lint:
+    stage: lint
+    image: node:16.13.1
+    script:
+        - echo "Linting..."
+        - npm ci --include=dev
+        - npm run checkPrettier
+        - npm run eslint
+    coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+    artifacts:
+        when: always
+        reports:
+            codequality: gl-codequality.json
+# TEST SECTION
+
+test:
+    stage: test
+    image: node:16.13.1
+    script:
+        - echo "Testing..."
+        - npm ci --include=dev
+        - npm run test -- --coverage --watchAll=false --reporters=default --passWithNoTests
+    coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+    artifacts:
+        when: always
+        reports:
+            junit:
+                - junit.xml
+
+### BUILD SECTION
+
+build:
+    stage: build
+    image: node:16.13.1
+    script:
+        #    - npm cache verify
+        - echo "Building..."
+        - npm ci
+        - npm run build
+    variables:
+        DISABLE_ESLINT_PLUGIN: 'true'
+    artifacts:
+        expire_in: 1 hour
+        paths:
+            - build
+            - node_modules/
