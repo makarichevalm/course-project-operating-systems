@@ -1,5 +1,5 @@
 import './App.css';
-
+import MainPage from '@pages/MainPage/MainPage';
 import Page1 from '@pages/Page1';
 import Page2 from '@pages/Page2';
 import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
@@ -8,7 +8,7 @@ import styles from './App.module.css';
 
 function App() {
     return (
-        <Router>
+        /*<Router>
             <nav className={styles.navigation}>
                 <Link to="/">Home</Link>
                 <Link to="/page2">About</Link>
@@ -17,7 +17,9 @@ function App() {
                 <Route path="/page2" element={<Page2 />} />
                 <Route path="/" element={<Page1 />} />
             </Routes>
-        </Router>
+        </Router>*/
+        <MainPage/>
+        
     );
 }
 

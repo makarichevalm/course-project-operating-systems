@@ -1,0 +1,10 @@
+.all {
+    display: flex;
+    justify-content: center;
+}
+.main {
+    width: 428px;
+    height: 926px;
+    background-color: black;
+    text-align: center;
+}
