@@ -6,7 +6,7 @@ function MainPage() {
     return (
         <div className="all">
             <div className="main">
-                <Button />
+                <Button text="Add new task" />
             </div>
         </div>
     );
