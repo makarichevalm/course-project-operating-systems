@@ -1,11 +1,8 @@
 import './Button.css';
 
-function Button({ text }) {
-    function handleClick() {
-        console.log('You clicked me!');
-    }
+function Button({ text, event }) {
     return (
-        <button className="but_main" onClick={handleClick}>
+        <button className="but_main" onClick={event}>
             {text}
         </button>
     );

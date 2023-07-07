@@ -4,6 +4,8 @@ import changeImg from '../../img/Change_img.svg';
 import deleteImg from '../../img/Delete_img.svg';
 
 function Task({ name, desc }) {
+    function changeTask() {}
+    function deleteTask() {}
     return (
         <div className="task">
             <div>
@@ -13,12 +15,12 @@ function Task({ name, desc }) {
                 <div className="name">{name}</div>
                 <div className="desc">{desc}</div>
             </div>
-            <div className="change_but">
+            <button className="change_but" onClick={changeTask()}>
                 <img src={changeImg} alt="" />
-            </div>
-            <div className="delete_but">
+            </button>
+            <button className="delete_but" onClick={deleteTask()}>
                 <img src={deleteImg} alt="" />
-            </div>
+            </button>
         </div>
     );
 }

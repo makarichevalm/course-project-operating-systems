@@ -3,11 +3,14 @@ import './MainPage.css';
 import Button from '@components/Button/Button';
 import Task from '@components/Task/Task';
 
+function handleClick() {
+    console.log('You clicked me!');
+}
 function MainPage() {
     return (
         <div className="all">
             <div className="main">
-                <Button text="Add new task" />
+                <Button text="Add new task" event={handleClick} />
                 <Task name="Name" desc="Description" />
                 <Task name="Name" desc="Description" />
                 <Task name="Name" desc="Description" />
@@ -15,4 +18,5 @@ function MainPage() {
         </div>
     );
 }
+
 export default MainPage;

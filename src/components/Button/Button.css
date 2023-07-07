@@ -12,3 +12,7 @@
     font-weight: 400;
     font-size: 16px;
 }
+.but_main:hover{
+    cursor: pointer;
+    background-color: #b7992f;
+}
