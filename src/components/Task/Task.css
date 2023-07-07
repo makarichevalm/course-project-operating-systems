@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+.task{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 13px auto;
+    font-family: 'Rubik';
+    font-weight: 400;
+    color:#FFFFFF;
+    border: 2px solid #d6d6d6;
+    width: 387px;
+    height: 72px;
+    border-radius: 15px;
+}
+.checkbox{
+    margin-left: 14px;
+    height: 20px;
+    width: 20px;
+    accent-color: #dfbd43;
+}
+.checkbox:hover{
+    cursor: pointer;
+}
+.delete_but{
+    margin-left: 10px;
+    background-color: black;
+    border:0;
+}
+.delete_but:hover{
+    cursor: pointer;
+}
+.change_but{
+    margin-left: 180px;
+    background-color: black;
+    border:0;
+}
+.change_but:hover{
+    cursor: pointer;
+}
+.name{
+    font-size: 13px;
+    padding-bottom: 16px;
+}
+.desc{
+    font-size: 16px;
+}
+.text_block{
+    text-align: left;
+    margin-left: 10px;
+}

@@ -4,10 +4,15 @@
     width: 367px;
     height: 74px;
     margin-top: 143px;
+    margin-bottom: 15px;
     border: 2px solid #d6d6d6;
     border-radius: 20px;
     text-transform: uppercase;
     font-family: 'Rubik';
     font-weight: 400;
     font-size: 16px;
+}
+.but_main:hover{
+    cursor: pointer;
+    background-color: #b7992f;
 }
