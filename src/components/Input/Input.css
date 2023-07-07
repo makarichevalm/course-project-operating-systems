@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+.inputForm{
+    width: 327px;
+    height: 72px;
+    background-color: black;
+    border: 2px solid #d6d6d6;
+    margin-bottom: 45px;
+    border-radius: 20px;
+    font-family: 'Rubik';
+    font-size: 16px;
+    color: #FFFFFF;
+    padding: 0px 20px;
+}
+::-webkit-input-placeholder {color:#FFFFFF;}

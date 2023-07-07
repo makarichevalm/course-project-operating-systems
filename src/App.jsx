@@ -1,9 +1,12 @@
 import './App.css';
 
-import MainPage from '@pages/MainPage/MainPage';
+import FormAdd from '@components/FormAdd/FormAdd';
+
+// import MainPage from '@pages/MainPage/MainPage';
 
 function App() {
-    return <MainPage />;
+    return <FormAdd />;
+    // return <MainPage />;
 }
 
 export default App;
