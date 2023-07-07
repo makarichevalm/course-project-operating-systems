@@ -10,7 +10,7 @@ function MainPage() {
     return (
         <div className="all">
             <div className="main">
-                <Button text="Add new task" event={handleClick} />
+                <Button text="Add new task" onClick={handleClick} />
                 <Task name="Name" desc="Description" />
                 <Task name="Name" desc="Description" />
                 <Task name="Name" desc="Description" />
