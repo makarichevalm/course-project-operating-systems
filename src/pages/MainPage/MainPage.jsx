@@ -7,19 +7,19 @@ import React, { useState } from 'react';
 
 function MainPage() {
     const [isShown, setIsShown] = useState(false);
-    // const [isDisabled, setIsDisabled] = useState(false);
     const handleClick = () => {
-        setIsShown(true);
-        // setIsDisabled(true);
+        setIsShown((current) => !current);
         console.log('You clicked me!');
     };
     return (
         <div className="all">
             <div
                 className="main"
-                // style={
-                // isDisabled ? { pointerEvents: 'none', opacity: '0.8' } : {}
-                //  }
+                style={
+                    isShown
+                        ? { pointerEvents: 'none', opacity: '0.8' }
+                        : { pointerEvents: 'auto', opacity: '1' }
+                }
             >
                 <div className="but">
                     <Button
@@ -33,7 +33,7 @@ function MainPage() {
                 <Task name="Name" desc="Description" />
                 <Task name="Name" desc="Description" />
             </div>
-            {isShown && <FormAdd state={isShown} />}
+            {isShown && <FormAdd state={handleClick} />}
         </div>
     );
 }
