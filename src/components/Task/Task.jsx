@@ -1,6 +1,7 @@
 import './Task.css';
 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import changeImg from '../../img/Change_img.svg';
 import deleteImg from '../../img/Delete_img.svg';
@@ -28,9 +29,11 @@ function Task({ name, desc }) {
                     {desc}
                 </div>
             </div>
-            <button className="change_but" onClick={changeTask()}>
-                <img src={changeImg} alt="" />
-            </button>
+            <Link to="/change">
+                <button className="change_but" onClick={changeTask()}>
+                    <img src={changeImg} alt="" />
+                </button>
+            </Link>
             <button className="delete_but" onClick={deleteTask()}>
                 <img src={deleteImg} alt="" />
             </button>
