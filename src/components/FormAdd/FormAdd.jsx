@@ -2,26 +2,21 @@ import './FormAdd.css';
 
 import Button from '@components/Button/Button';
 import Input from '@components/Input/Input';
-import { Link } from 'react-router-dom';
+// import { useState } from 'react';
 
-function FormAdd() {
-    const handleClick = () => {
-        console.log('You clicked at form!');
-    };
+function FormAdd({ handleClick, name, desc }) {
     return (
         <div className="all">
             <div className="form">
                 <div className="nameForm">New task</div>
-                <Input name="Name" text="Name" />
-                <Input name="Desc" text="Description" />
-                <Link to="/">
-                    <Button
-                        text="Add new task"
-                        onClick={handleClick}
-                        width="367px"
-                        height="74px"
-                    />
-                </Link>
+                <Input name="Name" text="Name" value={name} />
+                <Input name="Desc" text="Description" value={desc} />
+                <Button
+                    text="Add new task"
+                    onClick={handleClick}
+                    width="367px"
+                    height="74px"
+                />
             </div>
         </div>
     );
