@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     margin: 13px auto;
     font-family: 'Rubik';
     font-weight: 400;
@@ -13,7 +14,8 @@
     border-radius: 15px;
 }
 .checkbox{
-    margin-left: 14px;
+    margin-left: 15px;
+    margin-right: 15px;
     height: 20px;
     width: 20px;
     accent-color: #dfbd43;
@@ -22,7 +24,7 @@
     cursor: pointer;
 }
 .delete_but{
-    margin-left: 10px;
+    margin-right: 15px;
     background-color: black;
     border:0;
 }
@@ -30,7 +32,7 @@
     cursor: pointer;
 }
 .change_but{
-    margin-left: 180px;
+    margin-right: 10px;
     background-color: black;
     border:0;
 }
@@ -46,5 +48,5 @@
 }
 .text_block{
     text-align: left;
-    margin-left: 10px;
+    margin-right: auto;
 }
