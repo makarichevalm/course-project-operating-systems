@@ -16,15 +16,18 @@ function MainPage() {
     const [isOpenAdd, setIsOpenAdd] = useState(false);
     const [name, setName] = useState('');
     const [desc, setDesc] = useState('');
-    const clickAdd = (event) => {
-        setName(event.target.value);
-        setDesc(desc);
-        setTasks([...tasks, { id: ind++, name, description: desc }]);
+    const clickAdd = () => {
+        setTasks([...tasks, { id: (ind += 1), name, description: desc }]);
         setIsOpenAdd(false);
+    };
+    const changeName = (event) => {
+        setName(event.target.value);
+    };
+    const changeDesc = (event) => {
+        setDesc(event.target.value);
     };
     const handleClick = () => {
         setIsOpenAdd(true);
-        console.log('You clicked me!');
     };
     return (
         <div className="all">
@@ -42,7 +45,13 @@ function MainPage() {
                 ))}
             </div>
             {isOpenAdd && (
-                <FormAdd handleClick={clickAdd} name={name} desc={desc} />
+                <FormAdd
+                    handleClick={clickAdd}
+                    name={name}
+                    desc={desc}
+                    changeName={changeName}
+                    changeDesc={changeDesc}
+                />
             )}
         </div>
     );

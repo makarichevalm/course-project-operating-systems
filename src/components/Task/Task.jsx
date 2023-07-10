@@ -1,23 +1,22 @@
 import './Task.css';
 
 import FormChange from '@components/FormChange/FormChange';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import changeImg from '../../img/Change_img.svg';
 import deleteImg from '../../img/Delete_img.svg';
 
 function Task({ name, desc }) {
     const [checked, setChecked] = useState(false);
-    const [isOpenCh, setIsOpenCh] = useState(false);
+    const [isOpenChange, setIsOpenChange] = useState(false);
     const clickChange = () => {
-        setIsOpenCh(false);
-        console.log('You clicked change close!');
+        setIsOpenChange(false);
     };
     const changeTask = () => {
-        setIsOpenCh(true);
-        console.log('You clicked change!');
+        setIsOpenChange(true);
     };
     function deleteTask() {}
+    const isCheckItem = checked ? { textDecoration: 'line-through' } : {};
     return (
         <div>
             <div className="task">
@@ -31,12 +30,7 @@ function Task({ name, desc }) {
                 </div>
                 <div className="text_block">
                     <div className="name">{name}</div>
-                    <div
-                        className="desc"
-                        style={
-                            checked ? { textDecoration: 'line-through' } : {}
-                        }
-                    >
+                    <div className="desc" style={isCheckItem}>
                         {desc}
                     </div>
                 </div>
@@ -48,7 +42,7 @@ function Task({ name, desc }) {
                     <img src={deleteImg} alt="" />
                 </button>
             </div>
-            {isOpenCh && <FormChange handleClick={clickChange} />}
+            {isOpenChange && <FormChange handleClick={clickChange} />}
         </div>
     );
 }
