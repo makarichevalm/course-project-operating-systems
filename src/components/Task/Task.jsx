@@ -6,7 +6,7 @@ import { useState } from 'react';
 import changeImg from '../../img/Change_img.svg';
 import deleteImg from '../../img/Delete_img.svg';
 
-function Task({ name, desc }) {
+function Task({ id, name, desc, clickDelete }) {
     const [checked, setChecked] = useState(false);
     const [isOpenChange, setIsOpenChange] = useState(false);
     const clickChange = () => {
@@ -15,7 +15,6 @@ function Task({ name, desc }) {
     const changeTask = () => {
         setIsOpenChange(true);
     };
-    function deleteTask() {}
     const isCheckItem = checked ? { textDecoration: 'line-through' } : {};
     return (
         <div>
@@ -36,10 +35,10 @@ function Task({ name, desc }) {
                 </div>
 
                 <button className="change_but" onClick={changeTask}>
-                    <img src={changeImg} alt="" />
+                    <img src={changeImg} alt="change" />
                 </button>
-                <button className="delete_but" onClick={deleteTask()}>
-                    <img src={deleteImg} alt="" />
+                <button className="delete_but" onClick={() => clickDelete(id)}>
+                    <img src={deleteImg} alt="delete" />
                 </button>
             </div>
             {isOpenChange && <FormChange handleClick={clickChange} />}
