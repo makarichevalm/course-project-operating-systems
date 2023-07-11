@@ -9,13 +9,13 @@ function FormAdd({ handleClick, name, desc, changeName, changeDesc }) {
             <div className="form">
                 <div className="nameForm">New task</div>
                 <Input
-                    name="Name"
+                    id="Name"
                     text="Name"
                     value={name}
                     onChange={changeName}
                 />
                 <Input
-                    name="Desc"
+                    id="Desc"
                     text="Description"
                     value={desc}
                     onChange={changeDesc}
