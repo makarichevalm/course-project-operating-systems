@@ -6,7 +6,7 @@ import { useState } from 'react';
 import changeImg from '../../img/Change_img.svg';
 import deleteImg from '../../img/Delete_img.svg';
 
-function Task({ id, name, desc, clickDelete }) {
+function Task({ id, name, desc, clickDelete, changeName, changeDesc }) {
     const [checked, setChecked] = useState(false);
     const [isOpenChange, setIsOpenChange] = useState(false);
     const clickChange = () => {
@@ -41,7 +41,15 @@ function Task({ id, name, desc, clickDelete }) {
                     <img src={deleteImg} alt="delete" />
                 </button>
             </div>
-            {isOpenChange && <FormChange handleClick={clickChange} />}
+            {isOpenChange && (
+                <FormChange
+                    handleClick={clickChange}
+                    name={name}
+                    desc={desc}
+                    changeName={changeName}
+                    changeDesc={changeDesc}
+                />
+            )}
         </div>
     );
 }

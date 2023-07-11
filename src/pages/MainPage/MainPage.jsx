@@ -24,6 +24,12 @@ function MainPage() {
         setTasks([...tasks, { id: uuid(), name, description: desc }]);
         setIsOpenAdd(false);
     };
+    const addName = (event) => {
+        setName(event.target.value);
+    };
+    const addDesc = (event) => {
+        setDesc(event.target.value);
+    };
     const changeName = (event) => {
         setName(event.target.value);
     };
@@ -54,6 +60,8 @@ function MainPage() {
                         name={item.name}
                         desc={item.description}
                         clickDelete={clickDeleteTask}
+                        changeName={changeName}
+                        changeDesc={changeDesc}
                     />
                 ))}
             </div>
@@ -62,8 +70,8 @@ function MainPage() {
                     handleClick={clickAdd}
                     name={name}
                     desc={desc}
-                    changeName={changeName}
-                    changeDesc={changeDesc}
+                    addName={addName}
+                    addDesc={addDesc}
                 />
             )}
         </div>
