@@ -36,7 +36,6 @@ function MainPage() {
     const clickDeleteTask = (id) => {
         setTasks(tasks.filter((item) => item.id !== id));
     };
-    console.log(tasks);
     return (
         <div className="all">
             <div className="main">
