@@ -7,7 +7,7 @@ function Input({ id, text, value, onChange }) {
             className="inputForm"
             id={id}
             placeholder={text}
-            defaultValue={value}
+            value={value}
             onChange={onChange}
         />
     );

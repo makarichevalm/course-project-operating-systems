@@ -22,6 +22,8 @@ function MainPage() {
     const [desc, setDesc] = useState('');
     const clickAdd = () => {
         setTasks([...tasks, { id: uuid(), name, description: desc }]);
+        setName('');
+        setDesc('');
         setIsOpenAdd(false);
     };
     const changeName = (event) => {
@@ -30,9 +32,10 @@ function MainPage() {
     const changeDesc = (event) => {
         setDesc(event.target.value);
     };
-    const changeTaskArr = (id) => {
+    const changeTaskArr = (idTask, nameTask, descTask) => {
         const changedTasks = tasks.map((item) => {
-            if (item.id === id) return { id, name, description: desc };
+            if (item.id === idTask)
+                return { id: idTask, name: nameTask, description: descTask };
             return item;
         });
         setTasks(changedTasks);
@@ -61,8 +64,6 @@ function MainPage() {
                         name={item.name}
                         desc={item.description}
                         clickDelete={clickDeleteTask}
-                        changeName={changeName}
-                        changeDesc={changeDesc}
                         changeTask={changeTaskArr}
                     />
                 ))}
