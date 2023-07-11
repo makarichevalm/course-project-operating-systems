@@ -4,12 +4,16 @@ import Button from '@components/Button/Button';
 import FormAdd from '@components/FormAdd/FormAdd';
 import Task from '@components/Task/Task';
 import { useState } from 'react';
+import { v4 as uuid } from 'uuid';
 
-let ind = 3;
 const dataTasks = [
-    { id: 0, name: 'mnbv', description: ',mnbvc' },
-    { id: 1, name: '1kjhgfd', description: '1nbvcx' },
-    { id: 2, name: 'jmhngbfvdc', description: 'poiuytre' },
+    {
+        id: uuid(),
+        name: 'go to shop',
+        description: 'milk, eggs, water, apples',
+    },
+    { id: uuid(), name: 'gym', description: '17:00' },
+    { id: uuid(), name: 'reading', description: 'find a book' },
 ];
 function MainPage() {
     const [tasks, setTasks] = useState(dataTasks);
@@ -17,7 +21,7 @@ function MainPage() {
     const [name, setName] = useState('');
     const [desc, setDesc] = useState('');
     const clickAdd = () => {
-        setTasks([...tasks, { id: (ind += 1), name, description: desc }]);
+        setTasks([...tasks, { id: uuid(), name, description: desc }]);
         setIsOpenAdd(false);
     };
     const changeName = (event) => {
@@ -28,6 +32,9 @@ function MainPage() {
     };
     const handleClick = () => {
         setIsOpenAdd(true);
+    };
+    const clickDeleteTask = (id) => {
+        setTasks(tasks.filter((item) => item.id !== id));
     };
     return (
         <div className="all">
@@ -41,7 +48,13 @@ function MainPage() {
                     />
                 </div>
                 {tasks.map((item) => (
-                    <Task name={item.name} desc={item.description} />
+                    <Task
+                        key={item.id}
+                        id={item.id}
+                        name={item.name}
+                        desc={item.description}
+                        clickDelete={clickDeleteTask}
+                    />
                 ))}
             </div>
             {isOpenAdd && (
