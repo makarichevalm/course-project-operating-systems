@@ -3,22 +3,22 @@ import './FormAdd.css';
 import Button from '@components/Button/Button';
 import Input from '@components/Input/Input';
 
-function FormAdd({ handleClick, name, desc, addName, addDesc }) {
+function FormAdd({ handleClick, name, desc, changeName, changeDesc }) {
     return (
         <div className="all">
             <div className="form">
                 <div className="nameForm">New task</div>
                 <Input
-                    name="Name"
+                    id="Name"
                     text="Name"
                     value={name}
-                    onChange={addName}
+                    onChange={changeName}
                 />
                 <Input
-                    name="Desc"
+                    id="Desc"
                     text="Description"
                     value={desc}
-                    onChange={addDesc}
+                    onChange={changeDesc}
                 />
                 <Button
                     text="Add new task"

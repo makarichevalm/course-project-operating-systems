@@ -1,13 +1,13 @@
 import './Input.css';
 
-function Input({ name, text, val, onChange }) {
+function Input({ id, text, value, onChange }) {
     return (
         <input
             type="text"
             className="inputForm"
-            id={name}
+            id={id}
             placeholder={text}
-            value={val}
+            defaultValue={value}
             onChange={onChange}
         />
     );

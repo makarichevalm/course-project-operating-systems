@@ -24,17 +24,18 @@ function MainPage() {
         setTasks([...tasks, { id: uuid(), name, description: desc }]);
         setIsOpenAdd(false);
     };
-    const addName = (event) => {
-        setName(event.target.value);
-    };
-    const addDesc = (event) => {
-        setDesc(event.target.value);
-    };
     const changeName = (event) => {
         setName(event.target.value);
     };
     const changeDesc = (event) => {
         setDesc(event.target.value);
+    };
+    const changeTaskArr = (id) => {
+        const changedTasks = tasks.map((item) => {
+            if (item.id === id) return { id, name, description: desc };
+            return item;
+        });
+        setTasks(changedTasks);
     };
     const handleClick = () => {
         setIsOpenAdd(true);
@@ -62,6 +63,7 @@ function MainPage() {
                         clickDelete={clickDeleteTask}
                         changeName={changeName}
                         changeDesc={changeDesc}
+                        changeTask={changeTaskArr}
                     />
                 ))}
             </div>
@@ -70,8 +72,8 @@ function MainPage() {
                     handleClick={clickAdd}
                     name={name}
                     desc={desc}
-                    addName={addName}
-                    addDesc={addDesc}
+                    changeName={changeName}
+                    changeDesc={changeDesc}
                 />
             )}
         </div>
